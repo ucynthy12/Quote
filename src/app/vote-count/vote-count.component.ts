@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class VoteCountComponent implements OnInit {
   numberOfLikes: number = 0;
   numberOfDislikes: number = 0;
+  
 
   likeButtonClick() {
     this.numberOfLikes++;
@@ -15,6 +16,7 @@ export class VoteCountComponent implements OnInit {
   dislikeButtonClick() {
     this.numberOfDislikes++;
   }
+
   constructor() { }
 
   ngOnInit(): void {
