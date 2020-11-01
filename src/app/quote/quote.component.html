@@ -24,8 +24,7 @@
 
                         <p class="author">~{{theQuote.name}}</p>
                         <p class="posted">Posted :{{theQuote.datePosted|daysCount}} days ago</p>
-                        <app-vote-count></app-vote-count>
-                        <button id='bt' (click)='quoteDelete(i)' type="button" class="btn btn-danger">Delete</button>
+                        <app-vote-count [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-vote-count>
                     </div>
                 </div>
             </div>
