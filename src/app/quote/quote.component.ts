@@ -24,18 +24,26 @@ export class QuoteComponent implements OnInit {
     this.quote.push(quote)
     console.log(this.quote);
   }
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete this quote: "${this.quote[index].quotes}"?`)
 
-  quoteDelete(i) {
-    this.quote.splice(i, 1)
-  }
-  sortedQuote(){
-    return this.quote.sort((a,b)=>
-    b.numberOfLikes-a.numberOfLikes)
+      if (toDelete) {
+        this.quote.splice(index, 1)
+      }
+    }
   }
 
-  highestVote(){
-    for(let uQuotes of this.quote){
-      if((this.quote.indexOf(uQuotes)===0 )&& (uQuotes.numberOfLikes>0)){
+  sortedQuote() {
+    return this.quote.sort((a, b) =>
+      (b.numberOfLikes - a.numberOfLikes) ? 1 : (a.numberOfLikes - b.numberOfLikes) ? -1 : 0);
+
+  }
+
+
+  highestVote() {
+    for (let uQuotes of this.quote) {
+      if ((this.quote.indexOf(uQuotes) === 0) && (uQuotes.numberOfLikes > 0)) {
         return uQuotes.quotes
       }
     }

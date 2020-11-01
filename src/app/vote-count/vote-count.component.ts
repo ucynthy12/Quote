@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import{Quote} from '../quote';
 
 @Component({
   selector: 'app-vote-count',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class VoteCountComponent implements OnInit {
   numberOfLikes: number = 0;
   numberOfDislikes: number = 0;
+
   
+  @Input() quote: Quote;
+  @Output() isComplete = new EventEmitter<boolean>();   
 
   likeButtonClick() {
     this.numberOfLikes++;
@@ -16,7 +21,10 @@ export class VoteCountComponent implements OnInit {
   dislikeButtonClick() {
     this.numberOfDislikes++;
   }
-
+  quoteDelete(complete:boolean){
+    this.isComplete.emit(complete);
+  }
+ 
   constructor() { }
 
   ngOnInit(): void {
