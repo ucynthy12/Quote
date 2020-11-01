@@ -1,2 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+nav{
+    font-family: 'Dancing Script', cursive;
+}
+.navbar .navbar-brand{
+    color:red;
+    padding-left: 20px;
+    font-size: x-large;
+}
+.container button{
+    margin-top: 100px;
+}
+/* .navbar-text{
+    padding-left: ;
+} */
