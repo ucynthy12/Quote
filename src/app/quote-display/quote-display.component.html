@@ -1,1 +1,19 @@
-<p>quote-display works!</p>
+<div class="row">
+    <div class="col-md-6 align-items-center justify-content-center text-center">
+        <button (click)='toggleForm()' type="button" class="btn btn-outline-success">Create a new Quote</button>
+        <app-quote-form *ngIf='showForm' [quote]='quote' (addQuote)='addNewQuote($event)'></app-quote-form>
+    </div>
+</div>
+<div *ngFor='let theQuote of quote;let i = index '>
+    <div class="card justify-content-center text-center">
+        <div class="card-body">
+
+            <!-- <p appHighlight class="card-text" *ngIf='highestVoted()=== theQuote.numberOfLikes && theQuote.numberOfLikes>0'>{{theQuote.quotes}}.</p> -->
+            <!-- <p class="card-text" *ngIf='highestVoted() !== theQuote.numberOfLikes || theQuote.numberOfLikes === 0'>{{theQuote.quotes}}.</p> -->
+            <p class="card-text">{{theQuote.quotes}}.</p>
+            <p class="author">~{{theQuote.name}}</p>
+            <p class="posted">Posted :{{theQuote.datePosted|daysCount}} days ago</p>
+            <app-vote-count></app-vote-count>
+        </div>
+    </div>
+</div>
