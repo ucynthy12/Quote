@@ -1,0 +1,37 @@
+input#name{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid;
+    border-color: tomato;
+}
+textarea#Quote{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid;
+    border-color: tomato;
+}
+input#name::placeholder{
+ font-family: 'Dancing Script', cursive;
+
+}
+textarea#Quote::placeholder{
+    font-family: 'Dancing Script', cursive;  
+}
+input#complete::placeholder{
+    font-family: 'Dancing Script', cursive;  
+    color: gray;
+}
+#sbm{
+    margin-top: 0 ;
+    margin-left: 250px;
+}
+#qForm{
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin:20px;
+    padding: 20px;
+    background-color: rgb(253, 251, 251);
+}
+#label{
+    padding-left: 180px;
+}
