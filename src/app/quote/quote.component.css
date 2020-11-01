@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+.card {
+    box-shadow: 0 8px 6px -6px #ccc;
+    font-family: 'Dancing Script', cursive;
+    font-size: larger;
+}
+
+.author {
+    font-family: 'Itim', cursive;
+    text-transform: uppercase;
+    color: gray;
+}
+
+.posted {
+    font-size: 16px;
+}
+
+#card {
+    margin: 10px auto;
+}
