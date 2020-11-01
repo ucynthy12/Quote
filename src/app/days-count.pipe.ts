@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class DaysCountPipe implements PipeTransform {
 
   transform(value: any): number {
-
     let today: Date = new Date();
     let todayWithNoTime: any = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     var dateDifference = Math.round(Math.abs(value - todayWithNoTime));
@@ -19,9 +18,5 @@ export class DaysCountPipe implements PipeTransform {
     } else {
       return 0;
     }
-
-
   }
-
-
 }
