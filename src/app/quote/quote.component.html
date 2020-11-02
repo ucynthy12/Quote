@@ -14,25 +14,21 @@
             </div>
         </div>
         <div class="row">
-            <div id='card' *ngFor='let theQuote of sortedQuote();let i = index ' class="col-md-4">
+            <div id='card' *ngFor='let theQuote of quote;let i = index ' class="col-md-4">
                 <div class="card justify-content-center text-center">
                     <div class="card-body">
-                        <!-- <p appHighlight class="card-text" *ngIf='highestVoted()=== theQuote.numberOfLikes && theQuote.numberOfLikes>0'>{{theQuote.quotes}}.</p> -->
-                        <!-- <p class="card-text" *ngIf='highestVoted() !== theQuote.numberOfLikes || theQuote.numberOfLikes === 0'>{{theQuote.quotes}}.</p> -->
-                        <p appHighlight *ngIf='highestVote()' class="card-text">{{highestVote()}}.</p>
-                        <p *ngIf='!highestVote()'class="card-text">{{theQuote.quotes}}.</p>
-
+                        <p appHighlight *ngIf='i==0 && theQuote.numberOfLikes>=1; else loading' class="card-text">
+                            {{theQuote.quotes}}.</p>
+                        <ng-template #loading>{{theQuote.quotes}}</ng-template>
                         <p class="author">~{{theQuote.name}}</p>
                         <p class="posted">Posted :{{theQuote.datePosted|daysCount}} days ago</p>
-                        <app-vote-count [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-vote-count>
+                        <app-vote-count [quote]='quote' (isComplete)='deleteQuote($event,i)'
+                            (welcome)='highestVote($event,i)'></app-vote-count>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    
-</div>
-<div>
-    <p style="text-align:center; background-color: rgb(219, 218, 218);">&copy;Cynthia Umutoniwabo 2020</p>
+
 </div>

@@ -35,22 +35,18 @@ export class QuoteComponent implements OnInit {
   }
 
   sortedQuote() {
-    return this.quote.sort((a, b) =>
-      (b.numberOfLikes - a.numberOfLikes) ? 1 : (a.numberOfLikes - b.numberOfLikes) ? -1 : 0);
-
+    console.log(this.quote.sort((a, b) => b.numberOfLikes - a.numberOfLikes))
+  }
+  highestVote(hello, index) {
+    this.quote[index].numberOfLikes++;
+    // console.log(this.quote[index])
+    this.sortedQuote();
   }
 
-
-  highestVote() {
-    for (let uQuotes of this.quote) {
-      if ((this.quote.indexOf(uQuotes) === 0) && (uQuotes.numberOfLikes > 0)) {
-        return uQuotes.quotes
-      }
-    }
-  }
   constructor() { }
 
   ngOnInit(): void {
+    this.sortedQuote()
   }
 
 }
